@@ -4,8 +4,8 @@ go 1.18
 
 require (
 	github.com/go-sql-driver/mysql v1.8.1
-	github.com/go-the-way/unilog v0.0.0-20250117034358-5ddc9263eff2
-	github.com/spf13/cobra v1.8.0
+	github.com/go-the-way/unilog v0.0.0-20250117073938-22f45619c3d8
+	github.com/spf13/cobra v1.8.1
 	gorm.io/gorm v1.25.12
 )
 
