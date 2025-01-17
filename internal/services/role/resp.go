@@ -9,32 +9,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package main
+package role
 
 import (
-	_ "embed"
-
-	"fmt"
-
-	"github.com/spf13/cobra"
+	"github.com/go-the-way/uniperm/internal/models"
+	"github.com/go-the-way/uniperm/internal/services/base"
 )
 
-var (
-	exampleCmd = &cobra.Command{
-		Use:     "example",
-		Aliases: []string{"eg", "e"},
-		Short:   "print the example",
-		Long:    "print the example with format json",
-		Run:     exampleRun,
+type (
+	GetPageResp struct {
+		Total int64         `json:"total"`
+		List  []models.Role `json:"list"`
 	}
-	//go:embed files/example.json
-	exampleJsonFs string
+	GetResp     struct{ models.Role }
+	GetPermResp = base.TreeResp
 )
-
-func exampleRun(_ *cobra.Command, _ []string) {
-	fmt.Println(exampleJsonFs)
-}
-
-func init() {
-	rootCmd.AddCommand(exampleCmd)
-}

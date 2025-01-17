@@ -9,32 +9,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package main
+package pkg
 
 import (
-	_ "embed"
-
+	"crypto/md5"
 	"fmt"
-
-	"github.com/spf13/cobra"
+	"io"
 )
 
-var (
-	exampleCmd = &cobra.Command{
-		Use:     "example",
-		Aliases: []string{"eg", "e"},
-		Short:   "print the example",
-		Long:    "print the example with format json",
-		Run:     exampleRun,
-	}
-	//go:embed files/example.json
-	exampleJsonFs string
-)
-
-func exampleRun(_ *cobra.Command, _ []string) {
-	fmt.Println(exampleJsonFs)
-}
-
-func init() {
-	rootCmd.AddCommand(exampleCmd)
+func MD5(str string) string {
+	hash := md5.New()
+	_, _ = io.WriteString(hash, str)
+	buf := hash.Sum(nil)
+	return fmt.Sprintf("%x", buf)
 }

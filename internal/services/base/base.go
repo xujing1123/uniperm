@@ -9,32 +9,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package main
+package base
 
-import (
-	_ "embed"
-
-	"fmt"
-
-	"github.com/spf13/cobra"
-)
-
-var (
-	exampleCmd = &cobra.Command{
-		Use:     "example",
-		Aliases: []string{"eg", "e"},
-		Short:   "print the example",
-		Long:    "print the example with format json",
-		Run:     exampleRun,
-	}
-	//go:embed files/example.json
-	exampleJsonFs string
-)
-
-func exampleRun(_ *cobra.Command, _ []string) {
-	fmt.Println(exampleJsonFs)
-}
-
-func init() {
-	rootCmd.AddCommand(exampleCmd)
+type PageReq struct {
+	Page  int `form:"page"`
+	Limit int `form:"limit"`
 }

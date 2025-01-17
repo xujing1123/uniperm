@@ -9,32 +9,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package main
-
-import (
-	_ "embed"
-
-	"fmt"
-
-	"github.com/spf13/cobra"
-)
+package role
 
 var (
-	exampleCmd = &cobra.Command{
-		Use:     "example",
-		Aliases: []string{"eg", "e"},
-		Short:   "print the example",
-		Long:    "print the example with format json",
-		Run:     exampleRun,
-	}
-	//go:embed files/example.json
-	exampleJsonFs string
+	s          svc = &service{}
+	GetPage        = s.GetPage
+	Get            = s.Get
+	GetPerm        = s.GetPerm
+	UpdatePerm     = s.UpdatePerm
+	Add            = s.Add
+	Update         = s.Update
+	Delete         = s.Delete
+	Enable         = s.Enable
+	Disable        = s.Disable
 )
-
-func exampleRun(_ *cobra.Command, _ []string) {
-	fmt.Println(exampleJsonFs)
-}
-
-func init() {
-	rootCmd.AddCommand(exampleCmd)
-}

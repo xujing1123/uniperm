@@ -9,32 +9,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package main
+package pkg
 
-import (
-	_ "embed"
+import "time"
 
-	"fmt"
+type number interface{ uint | byte }
 
-	"github.com/spf13/cobra"
-)
-
-var (
-	exampleCmd = &cobra.Command{
-		Use:     "example",
-		Aliases: []string{"eg", "e"},
-		Short:   "print the example",
-		Long:    "print the example with format json",
-		Run:     exampleRun,
+func IfFunc(ok bool, fn func()) {
+	if ok {
+		fn()
 	}
-	//go:embed files/example.json
-	exampleJsonFs string
-)
-
-func exampleRun(_ *cobra.Command, _ []string) {
-	fmt.Println(exampleJsonFs)
 }
 
-func init() {
-	rootCmd.AddCommand(exampleCmd)
-}
+func IfGt0Func[T number](n T, fn func())   { IfFunc(n > 0, fn) }
+func IfNotEmptyFunc(str string, fn func()) { IfFunc(str != "", fn) }
+func TimeNow() time.Time                   { return time.Now() }
+func TimeNowStr() string                   { return TimeNow().Format("2006-01-02 15:04:05") }

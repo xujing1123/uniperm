@@ -9,32 +9,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package main
+package models
 
-import (
-	_ "embed"
-
-	"fmt"
-
-	"github.com/spf13/cobra"
-)
-
-var (
-	exampleCmd = &cobra.Command{
-		Use:     "example",
-		Aliases: []string{"eg", "e"},
-		Short:   "print the example",
-		Long:    "print the example with format json",
-		Run:     exampleRun,
+type (
+	RolePermission        = UnipermRolePermission
+	UnipermRolePermission struct {
+		Id           uint `gorm:"column:id;type:uint;primaryKey;autoIncrement:true;comment:Id" json:"id"`              // Id
+		RoleId       uint `gorm:"column:role_id;type:uint;not null;default:0;comment:角色Id" json:"role_id"`             // 角色Id
+		PermissionId uint `gorm:"column:permission_id;type:uint;not null;default:0;comment:权限Id" json:"permission_id"` // 权限Id
 	}
-	//go:embed files/example.json
-	exampleJsonFs string
 )
-
-func exampleRun(_ *cobra.Command, _ []string) {
-	fmt.Println(exampleJsonFs)
-}
-
-func init() {
-	rootCmd.AddCommand(exampleCmd)
-}

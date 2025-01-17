@@ -9,14 +9,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package main
+package user
 
-type perm struct {
-	Path     string `json:"path"`
-	Name     string `json:"name"`
-	ParentId int64  `json:"-"`
-	IsButton bool   `json:"is_button"`
-	Routes   []perm `json:"routes"`
+type svc interface {
+	GetPage(req GetPageReq) (resp GetPageResp, err error)
+	Get(req GetReq) (resp GetResp, err error)
+	GetPerm(req GetPermReq) (resp GetPermResp, err error)
+	GetPermButton(req GetPermButtonReq) (resp GetPermButtonResp, err error)
+	Add(req AddReq) (err error)
+	Update(req UpdateReq) (err error)
+	UpdatePassword(req UpdatePasswordReq) (err error)
+	UpdateRole(req UpdateRoleReq) (err error)
+	Delete(req DeleteReq) (err error)
+	Enable(req EnableReq) (err error)
+	Disable(req DisableReq) (err error)
+	Login(req LoginReq) (resp LoginResp, err error)
+	Logout(req LogoutReq) (err error)
 }
-
-func (p *perm) ignore() bool { return p.Name == "" }

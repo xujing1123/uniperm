@@ -9,32 +9,28 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package main
+package pkg
 
 import (
-	_ "embed"
-
 	"fmt"
-
-	"github.com/spf13/cobra"
+	"math/rand"
+	"strings"
 )
 
-var (
-	exampleCmd = &cobra.Command{
-		Use:     "example",
-		Aliases: []string{"eg", "e"},
-		Short:   "print the example",
-		Long:    "print the example with format json",
-		Run:     exampleRun,
+func RandStr(length int, numOnly ...bool) string {
+	no := false
+	if numOnly != nil && len(numOnly) > 0 {
+		no = numOnly[0]
 	}
-	//go:embed files/example.json
-	exampleJsonFs string
-)
-
-func exampleRun(_ *cobra.Command, _ []string) {
-	fmt.Println(exampleJsonFs)
-}
-
-func init() {
-	rootCmd.AddCommand(exampleCmd)
+	results := make([]string, 0)
+	symbol := "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+-*/=_"
+	for i := 0; i < length; i++ {
+		randLen := len(symbol)
+		if no {
+			randLen = 10
+		}
+		cur := symbol[rand.Intn(10000)%randLen]
+		results = append(results, fmt.Sprintf("%c", cur))
+	}
+	return strings.Join(results, "")
 }

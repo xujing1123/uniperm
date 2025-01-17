@@ -1,4 +1,4 @@
-// Copyright 2024 uniperm Author. All Rights Reserved.
+// Copyright 2025 uniperm Author. All Rights Reserved.
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -12,9 +12,20 @@
 package uniperm
 
 import (
-	"github.com/go-the-way/uniperm/services/permission"
-	"github.com/go-the-way/uniperm/services/role"
-	"github.com/go-the-way/uniperm/services/user"
+	"github.com/go-the-way/uniperm/internal/db"
+	"github.com/go-the-way/uniperm/internal/models"
+	"github.com/go-the-way/uniperm/internal/services/permission"
+	"github.com/go-the-way/uniperm/internal/services/role"
+	"github.com/go-the-way/uniperm/internal/services/user"
+)
+
+type PaginationFunc = db.PaginationFunc
+
+type (
+	User           = models.User
+	Role           = models.Role
+	Permission     = models.Permission
+	RolePermission = models.RolePermission
 )
 
 type (
