@@ -62,7 +62,7 @@ func Callback1Err[T any](err0 error, t T, fns ...func(t T) (err error)) (err err
 }
 
 func TransformCallback[T any](t *T, callback func(t T)) func(ptr *T) {
-	if callback != nil {
+	if callback == nil {
 		return nil
 	}
 	return func(ptr *T) { callback(*t) }
