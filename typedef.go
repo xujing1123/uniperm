@@ -29,21 +29,21 @@ type (
 )
 
 type (
-	UserGetPageReqUser        = user.GetPageReq
-	UserIdReqUser             = user.IdReq
-	UserGetReqUser            = user.GetReq
-	UserGetPermReqUser        = user.GetPermReq
-	UserGetPermButtonReqUser  = user.GetPermButtonReq
-	UserAddReqUser            = user.AddReq
-	UserUpdateReqUser         = user.UpdateReq
-	UserUpdatePasswordReqUser = user.UpdatePasswordReq
-	UserUpdateRoleReqUser     = user.UpdateRoleReq
-	UserDeleteReqUser         = user.DeleteReq
-	UserEnableReqUser         = user.EnableReq
-	UserDisableReqUser        = user.DisableReq
-	UserLoginReqCallbackUser  = user.LoginReqCallback
-	UserLoginReqUser          = user.LoginReq
-	UserLogoutReqUser         = user.LogoutReq
+	UserGetPageReq        = user.GetPageReq
+	UserIdReq             = user.IdReq
+	UserGetReq            = user.GetReq
+	UserGetPermReq        = user.GetPermReq
+	UserGetPermButtonReq  = user.GetPermButtonReq
+	UserAddReq            = user.AddReq
+	UserUpdateReq         = user.UpdateReq
+	UserUpdatePasswordReq = user.UpdatePasswordReq
+	UserUpdateRoleReq     = user.UpdateRoleReq
+	UserDeleteReq         = user.DeleteReq
+	UserEnableReq         = user.EnableReq
+	UserDisableReq        = user.DisableReq
+	UserLoginReqCallback  = user.LoginReqCallback
+	UserLoginReq          = user.LoginReq
+	UserLogoutReq         = user.LogoutReq
 
 	UserGetPageResp       = user.GetPageResp
 	UserGetResp           = user.GetResp
