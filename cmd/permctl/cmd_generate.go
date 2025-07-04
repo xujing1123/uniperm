@@ -86,6 +86,7 @@ func check() {
 	if _, err := os.ReadFile(jsonFile); err != nil {
 		logShow("read json file err:", err)
 		os.Exit(1)
+		return
 	}
 }
 
@@ -116,10 +117,12 @@ func createTable() {
 		if _, err := db.Exec(sql1Fs); err != nil {
 			logShow("create table err:", err)
 			os.Exit(1)
+			return
 		}
 		if _, err := db.Exec(sql2Fs); err != nil {
 			logShow("create index err:", err)
 			os.Exit(1)
+			return
 		}
 	}
 }
@@ -199,6 +202,7 @@ func verboseShow(v ...any) {
 		logger.Println(v...)
 	}
 }
+
 func insertSql() string {
 	return "insert into " + table + "(name, route, parent_id, is_button) values ('%s', '%s', %d, %d)"
 }

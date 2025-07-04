@@ -13,15 +13,16 @@ package role
 
 import "github.com/go-the-way/unilog"
 
-func (req *UpdatePermReq) LogName() (name string)                { return "修改角色权限" }
+func (req *UpdatePermReq) LogName() (name string) { return "修改角色权限" }
+func (req *AddReq) LogName() (name string)        { return "新增角色" }
+func (req *UpdateReq) LogName() (name string)     { return "修改角色" }
+func (req *DeleteReq) LogName() (name string)     { return "删除角色" }
+func (req *EnableReq) LogName() (name string)     { return "启用角色" }
+func (req *DisableReq) LogName() (name string)    { return "禁用角色" }
+
 func (req *UpdatePermReq) LogFields() (fields unilog.FieldSlice) { return unilog.GetFieldsFromTag(req) }
-func (req *AddReq) LogName() (name string)                       { return "新增角色" }
 func (req *AddReq) LogFields() (fields unilog.FieldSlice)        { return unilog.GetFieldsFromTag(req) }
-func (req *UpdateReq) LogName() (name string)                    { return "修改角色" }
 func (req *UpdateReq) LogFields() (fields unilog.FieldSlice)     { return unilog.GetFieldsFromTag(req) }
-func (req *DeleteReq) LogName() (name string)                    { return "删除角色" }
 func (req *DeleteReq) LogFields() (fields unilog.FieldSlice)     { return unilog.GetFieldsFromTag(req) }
-func (req *EnableReq) LogName() (name string)                    { return "启用角色" }
 func (req *EnableReq) LogFields() (fields unilog.FieldSlice)     { return unilog.GetFieldsFromTag(req) }
-func (req *DisableReq) LogName() (name string)                   { return "禁用角色" }
 func (req *DisableReq) LogFields() (fields unilog.FieldSlice)    { return unilog.GetFieldsFromTag(req) }

@@ -29,20 +29,21 @@ type (
 )
 
 type (
-	UserGetPageReq        = user.GetPageReq
-	UserGetReq            = user.GetReq
-	UserGetPermReq        = user.GetPermReq
-	UserGetPermButtonReq  = user.GetPermButtonReq
-	UserAddReq            = user.AddReq
-	UserUpdateReq         = user.UpdateReq
-	UserUpdatePasswordReq = user.UpdatePasswordReq
-	UserUpdateRoleReq     = user.UpdateRoleReq
-	UserDeleteReq         = user.DeleteReq
-	UserEnableReq         = user.EnableReq
-	UserDisableReq        = user.DisableReq
-	UserLoginReq          = user.LoginReq
-	UserLoginReqCallback  = user.LoginReqCallback
-	UserLogoutReq         = user.LogoutReq
+	GetPageReqUser        = user.GetPageReq
+	IdReqUser             = user.IdReq
+	GetReqUser            = user.GetReq
+	GetPermReqUser        = user.GetPermReq
+	GetPermButtonReqUser  = user.GetPermButtonReq
+	AddReqUser            = user.AddReq
+	UpdateReqUser         = user.UpdateReq
+	UpdatePasswordReqUser = user.UpdatePasswordReq
+	UpdateRoleReqUser     = user.UpdateRoleReq
+	DeleteReqUser         = user.DeleteReq
+	EnableReqUser         = user.EnableReq
+	DisableReqUser        = user.DisableReq
+	LoginReqCallbackUser  = user.LoginReqCallback
+	LoginReqUser          = user.LoginReq
+	LogoutReqUser         = user.LogoutReq
 
 	UserGetPageResp       = user.GetPageResp
 	UserGetResp           = user.GetResp
@@ -54,6 +55,7 @@ type (
 
 type (
 	RoleGetPageReq    = role.GetPageReq
+	RoleIdReq         = role.IdReq
 	RoleGetReq        = role.GetReq
 	RoleGetPermReq    = role.GetPermReq
 	RoleUpdatePermReq = role.UpdatePermReq
@@ -70,10 +72,12 @@ type (
 
 type (
 	PermissionTreeReq   = permission.TreeReq
+	PermissionIdReq     = permission.IdReq
 	PermissionGetReq    = permission.GetReq
 	PermissionAddReq    = permission.AddReq
 	PermissionUpdateReq = permission.UpdateReq
 	PermissionDeleteReq = permission.DeleteReq
 
-	PermissionGetResp = permission.GetResp
+	PermissionTreeResp = permission.TreeResp
+	PermissionGetResp  = permission.GetResp
 )

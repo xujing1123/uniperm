@@ -20,8 +20,8 @@ import (
 
 var (
 	SetDB         = db.SetDB
-	AutoMigrate   = db.AutoMigrate
 	SetPagination = db.SetPagination
+	AutoMigrate   = db.AutoMigrate
 )
 
 var (

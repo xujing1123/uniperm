@@ -13,9 +13,10 @@ package permission
 
 import "github.com/go-the-way/unilog"
 
-func (req *AddReq) LogName() (name string)                   { return "新增权限" }
+func (req *AddReq) LogName() (name string)    { return "新增权限" }
+func (req *UpdateReq) LogName() (name string) { return "修改权限" }
+func (req *DeleteReq) LogName() (name string) { return "删除权限" }
+
 func (req *AddReq) LogFields() (fields unilog.FieldSlice)    { return unilog.GetFieldsFromTag(req) }
-func (req *UpdateReq) LogName() (name string)                { return "修改权限" }
 func (req *UpdateReq) LogFields() (fields unilog.FieldSlice) { return unilog.GetFieldsFromTag(req) }
-func (req *DeleteReq) LogName() (name string)                { return "删除权限" }
 func (req *DeleteReq) LogFields() (fields unilog.FieldSlice) { return unilog.GetFieldsFromTag(req) }

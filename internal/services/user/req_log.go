@@ -13,19 +13,20 @@ package user
 
 import ul "github.com/go-the-way/unilog"
 
-func (req *AddReq) LogName() (name string)                       { return "新增用户" }
+func (req *AddReq) LogName() (name string)            { return "新增用户" }
+func (req *UpdateReq) LogName() (name string)         { return "修改用户" }
+func (req *UpdatePasswordReq) LogName() (name string) { return "修改用户密码" }
+func (req *UpdateRoleReq) LogName() (name string)     { return "修改用户角色" }
+func (req *DeleteReq) LogName() (name string)         { return "删除用户" }
+func (req *EnableReq) LogName() (name string)         { return "启用用户" }
+func (req *DisableReq) LogName() (name string)        { return "禁用用户" }
+func (req *LoginReq) LogName() (name string)          { return "用户登录" }
+
 func (req *AddReq) LogFields() (fields ul.FieldSlice)            { return ul.GetFieldsFromTag(req) }
-func (req *UpdateReq) LogName() (name string)                    { return "修改用户" }
 func (req *UpdateReq) LogFields() (fields ul.FieldSlice)         { return ul.GetFieldsFromTag(req) }
-func (req *UpdatePasswordReq) LogName() (name string)            { return "修改用户密码" }
 func (req *UpdatePasswordReq) LogFields() (fields ul.FieldSlice) { return ul.GetFieldsFromTag(req) }
-func (req *UpdateRoleReq) LogName() (name string)                { return "修改用户角色" }
 func (req *UpdateRoleReq) LogFields() (fields ul.FieldSlice)     { return ul.GetFieldsFromTag(req) }
-func (req *DeleteReq) LogName() (name string)                    { return "删除用户" }
 func (req *DeleteReq) LogFields() (fields ul.FieldSlice)         { return ul.GetFieldsFromTag(req) }
-func (req *EnableReq) LogName() (name string)                    { return "启用用户" }
 func (req *EnableReq) LogFields() (fields ul.FieldSlice)         { return ul.GetFieldsFromTag(req) }
-func (req *DisableReq) LogName() (name string)                   { return "禁用用户" }
 func (req *DisableReq) LogFields() (fields ul.FieldSlice)        { return ul.GetFieldsFromTag(req) }
-func (req *LoginReq) LogName() (name string)                     { return "用户登录" }
 func (req *LoginReq) LogFields() (fields ul.FieldSlice)          { return ul.GetFieldsFromTag(req) }
