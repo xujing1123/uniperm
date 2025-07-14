@@ -22,11 +22,11 @@ func (req *EnableReq) LogName() (name string)         { return "启用用户" }
 func (req *DisableReq) LogName() (name string)        { return "禁用用户" }
 func (req *LoginReq) LogName() (name string)          { return "用户登录" }
 
-func (req *AddReq) LogFields() (fields ul.FieldSlice)            { return ul.GetFieldsFromTag(req) }
-func (req *UpdateReq) LogFields() (fields ul.FieldSlice)         { return ul.GetFieldsFromTag(req) }
-func (req *UpdatePasswordReq) LogFields() (fields ul.FieldSlice) { return ul.GetFieldsFromTag(req) }
-func (req *UpdateRoleReq) LogFields() (fields ul.FieldSlice)     { return ul.GetFieldsFromTag(req) }
-func (req *DeleteReq) LogFields() (fields ul.FieldSlice)         { return ul.GetFieldsFromTag(req) }
-func (req *EnableReq) LogFields() (fields ul.FieldSlice)         { return ul.GetFieldsFromTag(req) }
-func (req *DisableReq) LogFields() (fields ul.FieldSlice)        { return ul.GetFieldsFromTag(req) }
-func (req *LoginReq) LogFields() (fields ul.FieldSlice)          { return ul.GetFieldsFromTag(req) }
+func (req *AddReq) LogFields() (fields ul.FieldSlice)            { return ul.GetFields(req) }
+func (req *UpdateReq) LogFields() (fields ul.FieldSlice)         { return ul.GetFields(req) }
+func (req *UpdatePasswordReq) LogFields() (fields ul.FieldSlice) { return ul.GetFields(req) }
+func (req *UpdateRoleReq) LogFields() (fields ul.FieldSlice)     { return ul.GetFields(req) }
+func (req *DeleteReq) LogFields() (fields ul.FieldSlice)         { return ul.GetFields(req) }
+func (req *EnableReq) LogFields() (fields ul.FieldSlice)         { return ul.GetFields(req) }
+func (req *DisableReq) LogFields() (fields ul.FieldSlice)        { return ul.GetFields(req) }
+func (req *LoginReq) LogFields() (fields ul.FieldSlice)          { return ul.GetFields(req) }

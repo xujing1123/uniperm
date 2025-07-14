@@ -20,9 +20,9 @@ func (req *DeleteReq) LogName() (name string)     { return "删除角色" }
 func (req *EnableReq) LogName() (name string)     { return "启用角色" }
 func (req *DisableReq) LogName() (name string)    { return "禁用角色" }
 
-func (req *UpdatePermReq) LogFields() (fields unilog.FieldSlice) { return unilog.GetFieldsFromTag(req) }
-func (req *AddReq) LogFields() (fields unilog.FieldSlice)        { return unilog.GetFieldsFromTag(req) }
-func (req *UpdateReq) LogFields() (fields unilog.FieldSlice)     { return unilog.GetFieldsFromTag(req) }
-func (req *DeleteReq) LogFields() (fields unilog.FieldSlice)     { return unilog.GetFieldsFromTag(req) }
-func (req *EnableReq) LogFields() (fields unilog.FieldSlice)     { return unilog.GetFieldsFromTag(req) }
-func (req *DisableReq) LogFields() (fields unilog.FieldSlice)    { return unilog.GetFieldsFromTag(req) }
+func (req *UpdatePermReq) LogFields() (fields unilog.FieldSlice) { return unilog.GetFields(req) }
+func (req *AddReq) LogFields() (fields unilog.FieldSlice)        { return unilog.GetFields(req) }
+func (req *UpdateReq) LogFields() (fields unilog.FieldSlice)     { return unilog.GetFields(req) }
+func (req *DeleteReq) LogFields() (fields unilog.FieldSlice)     { return unilog.GetFields(req) }
+func (req *EnableReq) LogFields() (fields unilog.FieldSlice)     { return unilog.GetFields(req) }
+func (req *DisableReq) LogFields() (fields unilog.FieldSlice)    { return unilog.GetFields(req) }
